@@ -23,14 +23,14 @@
             <i class="icon iconfont icon-view"></i>
             <span>{{ blog.custom_fields.views | views }}</span>
           </p>
-          <p class="list-icon comments">
+          <!-- <p class="list-icon comments">
             <i class="icon iconfont icon-comments"></i>
             <span>{{ blog.comment_count }}</span>
           </p>
           <p class="list-icon like">
             <i class="icon iconfont icon-like"></i>
             <span>1</span>
-          </p>
+          </p> -->
           <p class="list-icon tag">
             <i class="icon iconfont icon-tag"></i>
             <span>{{ blog.categories[0].slug }}</span>
@@ -60,7 +60,7 @@ export default {
   },
   filters: {
     moment: function(value) {
-      return Vue.prototype.$moment(value).fromNow()
+      return Vue.prototype.$moment(value).startOf('hour').fromNow()
     },
     views: function(value) {
       return value.toString()
@@ -77,7 +77,7 @@ export default {
     width 100%
     height auto
     overflow hidden
-    margin-top 1em
+    margin-top .5em
     .item
       width 100%
       .module
@@ -85,19 +85,13 @@ export default {
         width 100%
         background #fff
         padding .4em 0em
-        margin-bottom 1em
+        margin-bottom .5em
         display flex
         transition background trans
-        &:hover
-          background rgba(255, 255, 255, 0.6)
-          .thumb
-            a
-              img
-                transform translateX(-1em)
         .thumb
-          flex 0 0 17em
-          width 17em
-          height 11em
+          flex 0 0 13em
+          width 13em
+          height 8.4em
           margin-right 1em
           padding-left 0.5em
           a
@@ -108,43 +102,36 @@ export default {
             overflow hidden
             img
               position absolute
-              top -1em
-              left -.5em
+              top -3em
+              left -3.5em
               min-width 100%
-              max-width calc(100% + 1.5em)
-              width calc(100% + 1.5em)
+              max-width calc(150% + 1.5em)
+              width calc(150% + 1.5em)
               min-height 13em
               height auto
               transform translateX(0)
               transition transform trans
         .main
           flex 1
-          padding-right 1.6em
+          padding-right 1em
           .title
+            width 98%
             line-height 2em
             padding-bottom .5em
             font-weight 700
             transform translateX(0)
             transition transform trans
-            &:hover
-              transform translateX(.7em)
-              a::before
-                width 100%
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap
             a
               position relative
               font-size 1.4em
               color #00030d
-            a::before
-              content ""
-              position absolute
-              top 1.3em
-              width 0
-              height 1px
-              background #00030d
-              transition width trans
           .info
-            height 5em
-            font-size 1.3em
+            height 4em
+            max-height 4em
+            font-size 1.2em
             line-height 1.8em
             color #1d1d1d
           .list
@@ -161,8 +148,8 @@ export default {
               span
                 vertical-align middle
               &.time
-                flex 0 0 10em
-                width 10em
+                flex 0 0 8.5em
+                width 8.5em
               &.like
                 cursor pointer
               &.tag

@@ -20,7 +20,7 @@ export default {
     background #fff
     margin-top .7em
     .footer-wrap
-      width 98.6em
+      width 100%
       margin 0 auto
       height 4em
       line-height 4em

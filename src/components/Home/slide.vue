@@ -63,8 +63,6 @@ export default {
             width 100%
             transform rotate(0) scale(1)
             trans(transform, 1s)
-            &:hover
-              transform rotate(2deg) scale(1.1)
       .pagination
         position absolue
         text-align center
