@@ -1,19 +1,15 @@
 <template>
 <div id="app">
-  <!-- <img src="./assets/images/logo.png"> -->
-  <!-- <v-background></v-background> -->
-  <v-header></v-header>
-  <v-nav></v-nav>
-  <main class="main">
-    <!-- <v-nav></v-nav> -->
-    <!-- <v-right></v-right> -->
+  <v-nav class="nav"></v-nav>
+  <main class="main" ref="main">
+    <v-header @go = "go" @back='back'></v-header>
     <transition name="fade">
       <keep-alive>
         <router-view></router-view>
       </keep-alive>
     </transition>
+    <v-footer></v-footer>
   </main>
-  <v-footer></v-footer>
   <!-- <backtop></backtop> -->
 </div>
 </template>
@@ -31,22 +27,40 @@ export default {
   components: {
     'v-header': header,
     'v-nav': nav,
-    // 'v-right': right,
-    // 'v-background': background,
-    // 'backtop': backtop,
     'v-footer': footer
   },
+  methods: {
+    go() {
+      this.$refs.main.style.left = '15em'
+    },
+    back() {
+      this.$refs.main.style.left = '0em'
+    }
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
 
     #app
+      .nav
+        position fixed
+        top 0
+        left -15em
+        z-index 10
+        width 15em
+        height 100%
+        background-color #5d5d5d
+        transition left .15s linear
       .main
+        position relative
+        top 0
+        left 0
         width 100%
         height 100%
         margin 0 auto
         overflow hidden
+        transition left .15s linear
         &:after
           display block
           clear both

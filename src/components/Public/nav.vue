@@ -14,6 +14,20 @@
       </router-link>
     </div>
   </div>
+  <div class="link">
+    <div class="rico twitter">
+      <a href="http://47.94.89.18/feed/" target="_blank" class="icon iconfont icon-rss"></a>
+    </div>
+    <div class="rico weibo">
+      <a href="http://weibo.com/daoyi369 " target="_blank" class="icon iconfont icon-weibo"></a>
+    </div>
+    <div class="rico twitter">
+      <a href="https://twitter.com/WellCoding" target="_blank" class="icon iconfont icon-twitter"></a>
+    </div>
+    <div class="rico github">
+      <a href="https://github.com/daoyi7" target="_blank" class="icon iconfont icon-github"></a>
+    </div>
+  </div>
 </nav>
 </template>
 
@@ -42,14 +56,6 @@ export default {
 @import "../../common/mixin"
 
     .nav
-      position fixed
-      top 0
-      // left -11.7em
-      left 0
-      width 15em
-      height 100%
-      background-color #5d5d5d
-      z-index 9999
       .me
         width 100%
         height 12em
@@ -99,5 +105,20 @@ export default {
               margin-left 0.4em
               vertical-align middle
               text-transform uppercase
+      .link
+        display flex
+        width 100%
+        height 2em
+        line-height 2em
+        margin-top 1em
+        .rico
+          flex 1
+          text-align center
+          a.icon
+            padding .13em .18em
+            border-radius .2em
+            background-color #fff
+            color #00030d
+            font-size 1.5em
 
 </style>
