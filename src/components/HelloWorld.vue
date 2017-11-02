@@ -1,39 +1,48 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+<div class="hello">
+  <ul v-for="(post, index) in api">
+    <li>{{ post.id }}</li>
+  </ul>
+  <test :test="use"></test>
+</div>
 </template>
 
 <script>
+import Vue from 'vue'
+import axios from "axios"
+Vue.prototype.$http = axios
+import test from '@/components/test'
+
 export default {
   name: 'HelloWorld',
-  data () {
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      api: {},
+      use: ''
     }
+  },
+  components: {
+    test
+  },
+  created() {
+    this.$http({
+        method: 'get',
+        url: 'http://47.94.89.18/?json=1',
+      }).then((res) => {
+        this.api = res.data.posts
+        this.use = res.data.status
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
