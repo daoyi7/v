@@ -16,6 +16,7 @@ export default {
       if(this.$refs.header.style.left != '15em') {
         this.$refs.header.style.left = '15em'
         this.$emit('go')
+        this.$store.commit('aa', this.a)
       }else {
         this.$refs.header.style.left = '0em'
         this.$emit('back')

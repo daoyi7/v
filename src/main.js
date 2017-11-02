@@ -16,6 +16,8 @@ Vue.use(VueAwesomeSwiper)
 import apiConfig from '../config/api.config'
 axios.defaults.baseURL = apiConfig.baseURL
 
+import { store } from './store'
+
 Vue.prototype.$http = axios
 Vue.prototype.$moment = moment
 
@@ -89,6 +91,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: {
     App
