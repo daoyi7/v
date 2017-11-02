@@ -1,3 +1,7 @@
+body {
+  background: #eee;
+}
+
 span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #fff;
 }

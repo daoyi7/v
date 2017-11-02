@@ -53,8 +53,6 @@ export default {
 
 <style lang="stylus" scoped>
     .content
-        float left
-        width 66.4em
-        margin 0 0 0 13em
+        width 100%
         overflow hidden
 </style>

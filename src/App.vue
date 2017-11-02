@@ -1,11 +1,12 @@
 <template>
 <div id="app">
   <!-- <img src="./assets/images/logo.png"> -->
-  <v-background></v-background>
+  <!-- <v-background></v-background> -->
   <v-header></v-header>
+  <v-nav></v-nav>
   <main class="main">
-    <v-nav></v-nav>
-    <v-right></v-right>
+    <!-- <v-nav></v-nav> -->
+    <!-- <v-right></v-right> -->
     <transition name="fade">
       <keep-alive>
         <router-view></router-view>
@@ -13,16 +14,16 @@
     </transition>
   </main>
   <v-footer></v-footer>
-  <backtop></backtop>
+  <!-- <backtop></backtop> -->
 </div>
 </template>
 
 <script type="text/ecmascript-6">
 import header from '@/components/Public/header'
 import nav from '@/components/Public/nav'
-import right from '@/components/Public/right'
-import background from '@/components/Public/background'
-import backtop from '@/components/Public/backtop'
+// import right from '@/components/Public/right'
+// import background from '@/components/Public/background'
+// import backtop from '@/components/Public/backtop'
 import footer from '@/components/Public/footer'
 
 export default {
@@ -30,9 +31,9 @@ export default {
   components: {
     'v-header': header,
     'v-nav': nav,
-    'v-right': right,
-    'v-background': background,
-    'backtop': backtop,
+    // 'v-right': right,
+    // 'v-background': background,
+    // 'backtop': backtop,
     'v-footer': footer
   },
 }
@@ -42,7 +43,7 @@ export default {
 
     #app
       .main
-        width 98.6em
+        width 100%
         height 100%
         margin 0 auto
         overflow hidden

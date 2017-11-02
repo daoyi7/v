@@ -36,11 +36,17 @@ export default {
 
     .nav
       position fixed
+      top 0
+      left -11.7em
       width 11.7em
+      height 100%
+      background-color #5d5d5d
+      z-index 9999
       .nav-wrap
         width 100%
         height auto
-        background-color rgba(183, 191, 197, 0.6)
+        // background-color rgba(183, 191, 197, 0.6)
+        // background-color #5d5d5d
         position absolute
         top 0
         left 0
@@ -53,9 +59,10 @@ export default {
             padding 0 0 0 1.3em
             transition color .15s linear
             &:hover
-              color #00030d
+              color #fff
             &.active
-              color #00030d
+              background-color rgba(183, 191, 197, 0.6)
+              color #fff
             .icon
               font-size 1.4em
               vertical-align middle

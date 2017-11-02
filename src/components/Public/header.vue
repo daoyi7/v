@@ -1,17 +1,22 @@
 <template>
-    <header class="header">
-        <div class="header-wrap">
-            <nav class="header-nav">
-                <router-link class="header-link" to="/">kawhi.me</router-link>
-                <span class="motto">" I Can do all things "</span>
-            </nav>
-        </div>
-    </header>
+<header class="header">
+  <div class="header-wrap">
+    <nav class="header-nav">
+      <span class="menu" @click="menu"><i class="icon iconfont icon-menu"></i></span>
+      <router-link class="header-link" to="/">kawhi.me</router-link>
+    </nav>
+  </div>
+</header>
 </template>
 
 <script type="text/ecmascript-6">
-    export default {
+export default {
+  methods: {
+    menu: function() {
+      console.log(1)
     }
+  }
+}
 </script>
 
 <style lang="stylus" scoped>
@@ -21,7 +26,6 @@
     .header
       width 100%
       height height
-      padding-bottom 2em
       .header-wrap
         position fixed
         top 0
@@ -30,20 +34,33 @@
         width 100%
         height height
         line-height height
-        background-color rgba(183, 191, 197, 0.6)
-        color #00030d
+        // background-color rgba(183, 191, 197, 0.6)
+        background-color #5d5d5d
+        color #fff
         .header-nav
-          width 98.6em
+          position relative
+          width 100%
           margin 0 auto
           height height
+          text-align center
           line-height height
+          .menu
+            position absolute
+            left .5em
+            top 50%
+            width 3em
+            height 3em
+            margin-top -1.5em
+            line-height 3em
+            text-align center
+            display inline-block
+            i.icon-menu
+              font-size 2em
           .header-link
             display inline-block
             width auto
             height 100%
-            color #00030d
+            color #fff
             font-size 3em
-          .motto
-            margin-left 4.3em
 
 </style>

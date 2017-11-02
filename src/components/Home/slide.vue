@@ -43,7 +43,7 @@ export default {
       margin-bottom 1em
       .slide-item
         width 100%
-        height 25em
+        height 15em
         position relative
         overflow hidden
         .slide-link
@@ -59,7 +59,7 @@ export default {
             font-size 1.4em
           img.slide-thumb
             position absolute
-            top -6.5em
+            top -3.5em
             width 100%
             transform rotate(0) scale(1)
             trans(transform, 1s)
