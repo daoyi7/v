@@ -53,17 +53,17 @@ export default {
       })
   },
   computed: {
-    aa() {
+    isNav() {
       return this.$store.state.nav
     }
   },
   watch: {
-    aa: function() {
-      this.go()
+    isNav: function() {
+      this.toggle()
     }
   },
   methods: {
-    go() {
+    toggle() {
       if (this.$store.state.nav) {
         this.$refs.nav.style.left = '0em'
       }else {
