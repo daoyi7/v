@@ -17,9 +17,6 @@
 <script type="text/ecmascript-6">
 import header from '@/components/Public/header'
 import nav from '@/components/Public/nav'
-// import right from '@/components/Public/right'
-// import background from '@/components/Public/background'
-// import backtop from '@/components/Public/backtop'
 import footer from '@/components/Public/footer'
 
 export default {

@@ -2,12 +2,12 @@
 <header class="header">
   <div class="header_wrap" ref="header">
     <div class="header_nav">
-      <span class="menu" @click="menu"><i class="icon iconfont icon-menu"></i></span>
+      <span class="menu" @click.stop="menu"><i class="icon iconfont icon-menu"></i></span>
       <transition name="fade">
-        <span class="title" ref="title" @click="gohome" v-if="titleShow">kawhi.me</span>
-        <input ref="input" class="input" type="text" v-model="searchText" placeholder="Search your want..." v-if="!titleShow">
+        <span class="title" ref="title" @click.stop="gohome" v-if="titleShow">kawhi.me</span>
+        <input ref="input" class="input" type="text" v-model="searchText" placeholder="Search your want..." v-if="!titleShow" @keyup.enter="search">
       </transition>
-      <span class="search" @click="search"><i class="icon iconfont icon-search"></i></span>
+      <span class="search" @click.stop="searchShow"><i class="icon iconfont icon-search"></i></span>
     </div>
   </div>
 </header>
@@ -41,8 +41,15 @@ export default {
         path: '/'
       })
     },
-    search() {
+    searchShow() {
       this.titleShow = false
+    },
+    search() {
+      if (this.searchText !== '') {
+        this.$router.push({
+          path: '/search/' + this.searchText
+        })
+      }
     }
   }
 }
@@ -110,6 +117,8 @@ export default {
             background rgb(255, 255, 255)
             color rgb(162, 168, 173)
             border-radius .2em
+            &:active,&:focus
+              outline none
           .search
             position absolute
             right .5em

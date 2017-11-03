@@ -48,20 +48,19 @@ export default {
       overflow hidden
       display flex
       flex-wrap wrap
+      justify-content space-between
       .item
-        width 50%
-        // flex 0 0 20.5em
-        // width 20.5em
+        width 49%
         a
           display block
-          margin 0 .88em .8em 0
+          margin-bottom .8em
           background rgb(255, 255, 255)
           .thumb
             width 100%
-            height 11.5em
+            height 8em
             overflow hidden
             text-align center
-            line-height 14.5em
+            line-height 9.5em
             i
               font-size 8em
               color rgb(154, 154, 154)
@@ -84,19 +83,17 @@ export default {
               white-space nowrap
               margin-bottom .4em
             .description
-              margin-bottom 1rem
+              width 100%
+              margin-bottom 1em
               text-align left
               color #00030d
               line-height 2em
-              text-indent 1.6em
+              text-align center
               font-size 1.2em
-              height 4em
-              -o-text-overflow ellipsis
-              text-overflow ellipsis
-              display -webkit-box
+              height 2em
               overflow hidden
-              -webkit-line-clamp 2
-              -webkit-box-orient vertical
+              text-overflow ellipsis
+              white-space nowrap
             .info
               display flex
               padding-top 1em

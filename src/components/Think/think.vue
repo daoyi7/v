@@ -157,16 +157,16 @@ export default {
         text-align center
         font-size 1.5em
         padding .4em 0
-      .slogan::after
-        content ""
-        background-color #00030d
-        width .06em
-        height 1em
-        vertical-align -.2em
-        margin-left .2em
-        display inline-block
-        animation blink .4s infinite alternate
-        -webkit-animation blink .4s infinite alternate
+        &::after
+          content ""
+          background-color #00030d
+          width .06em
+          height 1em
+          vertical-align -.2em
+          margin-left .2em
+          display inline-block
+          animation blink .4s infinite alternate
+          -webkit-animation blink .4s infinite alternate
     .module
             position relative
             width 100%
