@@ -1,9 +1,9 @@
 <template>
-<nav class="nav">
+<nav class="nav" ref="nav">
   <div class="me">
     <div class="avatar"></div>
     <div class="motto">
-      <h3>" I Can do all things "</h3>
+      <h3>" I Can do all things "{{ aa }}</h3>
     </div>
   </div>
   <div class="nav-wrap">
@@ -32,7 +32,10 @@
 </template>
 
 <script type="text/ecmascript-6">
+import store from '@/store/store'
+
 export default {
+  store,
   data() {
     return {
       navs: '',
@@ -48,6 +51,25 @@ export default {
       .catch(function(error) {
         console.error(error);
       })
+  },
+  computed: {
+    aa() {
+      return this.$store.state.nav
+    }
+  },
+  watch: {
+    aa: function() {
+      this.go()
+    }
+  },
+  methods: {
+    go() {
+      if (this.$store.state.nav) {
+        this.$refs.nav.style.left = '0em'
+      }else {
+        this.$refs.nav.style.left = '-15em'
+      }
+    }
   }
 }
 </script>
@@ -56,6 +78,15 @@ export default {
 @import "../../common/mixin"
 
     .nav
+      position fixed
+      top 0
+      // left 0
+      left -15em
+      z-index 10
+      width 15em
+      height 100%
+      background-color #5d5d5d
+      transition left .15s linear
       .me
         width 100%
         height 12em

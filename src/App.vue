@@ -2,7 +2,7 @@
 <div id="app">
   <v-nav class="nav"></v-nav>
   <main class="main" ref="main">
-    <v-header @go = "go" @back='back'></v-header>
+    <v-header @go="go" @back='back'></v-header>
     <transition name="fade">
       <keep-alive>
         <router-view></router-view>
@@ -43,15 +43,6 @@ export default {
 <style lang="stylus" scoped>
 
     #app
-      .nav
-        position fixed
-        top 0
-        left -15em
-        z-index 10
-        width 15em
-        height 100%
-        background-color #5d5d5d
-        transition left .15s linear
       .main
         position relative
         top 0

@@ -16,7 +16,7 @@ Vue.use(VueAwesomeSwiper)
 import apiConfig from '../config/api.config'
 axios.defaults.baseURL = apiConfig.baseURL
 
-import { store } from './store'
+import store from './store/store'
 
 Vue.prototype.$http = axios
 Vue.prototype.$moment = moment

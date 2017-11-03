@@ -10,17 +10,20 @@
 </template>
 
 <script type="text/ecmascript-6">
+import store from '@/store/store'
+
 export default {
+  store,
   methods: {
     menu: function() {
-      if(this.$refs.header.style.left != '15em') {
-        this.$refs.header.style.left = '15em'
-        this.$emit('go')
-        this.$store.commit('aa', this.a)
-      }else {
-        this.$refs.header.style.left = '0em'
-        this.$emit('back')
-      }
+    this.$store.commit('toggle')
+    if(this.$store.state.nav) {
+      this.$refs.header.style.left = '15em'
+      this.$emit('go')
+    }else {
+      this.$refs.header.style.left = '0em'
+      this.$emit('back')
+    }
     }
   }
 }
