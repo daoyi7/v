@@ -1,7 +1,7 @@
 <template>
 <swiper class="slide-wrap" :options="swiperOption">
   <swiper-slide class="slide-item" v-for="(slide,index) in slides" key="index">
-    <router-link class="slide-link" to="/">
+    <router-link class="slide-link" :to="{ name: 'detail',params: { id: slide.id}}">
       <span class="slide-title">{{ slide.title }}</span>
       <img class="slide-thumb" :src="slide.thumbnail_images?slide.thumbnail_images.full.url:defaultImgUrl">
     </router-link>

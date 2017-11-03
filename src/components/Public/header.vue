@@ -1,11 +1,18 @@
 <template>
-<header class="header">
+<header class="header" v-click-outside="searchHide">
   <div class="header_wrap" ref="header">
     <div class="header_nav">
       <span class="menu" @click.stop="menu"><i class="icon iconfont icon-menu"></i></span>
       <transition name="fade">
         <span class="title" ref="title" @click.stop="gohome" v-if="titleShow">kawhi.me</span>
-        <input ref="input" class="input" type="text" v-model="searchText" placeholder="Search your want..." v-if="!titleShow" @keyup.enter="search">
+        <input ref="input"
+          class="input"
+          type="text"
+          v-model="searchText"
+          placeholder="Search your want..."
+          v-if="!titleShow"
+          @keyup.enter="search"
+          v-focus>
       </transition>
       <span class="search" @click.stop="searchShow"><i class="icon iconfont icon-search"></i></span>
     </div>
@@ -14,7 +21,25 @@
 </template>
 
 <script type="text/ecmascript-6">
+import Vue from 'vue'
 import store from '@/store/store'
+import vClickOutside from 'v-click-outside'
+
+Vue.use(vClickOutside)
+
+Vue.directive('focus', {
+  // 当绑定元素插入到 DOM 中。
+
+  inserted: function (el) {
+      // 聚焦元素
+      el.focus()
+  },
+  //也可以用update,update就是当页面有操作的时候就触发，比如点击按钮，输入框输入都算。
+  //有一个要注意的就是，就是你页面有几个input,比如一个input绑定了v-focus,一个没有绑定。你在没绑定v-focus的input输入时，绑定了v-focus的input就是自动获取焦点，这是个bug.
+  //update: function (el) {
+      //el.focus()
+  //}
+});
 
 export default {
   store,
@@ -44,12 +69,18 @@ export default {
     searchShow() {
       this.titleShow = false
     },
+    searchHide() {
+      this.titleShow = true
+    },
     search() {
       if (this.searchText !== '') {
         this.$router.push({
           path: '/search/' + this.searchText
         })
       }
+    },
+    aa() {
+      console.log(1)
     }
   }
 }

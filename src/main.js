@@ -32,8 +32,7 @@ import NotFound from '@/components/NotFound/404'
 const router = new VueRouter({
   // mode: 'history',
   'linkActiveClass': 'active',
-  routes: [
-    {
+  routes: [{
       path: '*',
       component: NotFound
     },
