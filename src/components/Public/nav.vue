@@ -3,7 +3,7 @@
   <div class="me">
     <div class="avatar"></div>
     <div class="motto">
-      <h3>" I Can do all things "{{ aa }}</h3>
+      <h3>" I Can do all things "</h3>
     </div>
   </div>
   <div class="nav-wrap">

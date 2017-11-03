@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "better-scroll": "^1.4.0",
     "clientjs": "^0.1.11",
     "moment": "^2.18.1",
     "particle-api-js": "^6.5.0",

@@ -40,8 +40,8 @@ export default {
     },
     slides() {
       let slidesArr = []
-      for(let i=0;i<this.posts.length;i++) {
-        if(this.posts[i].categories[0].slug!=="notice") {
+      for (let i = 0; i < this.posts.length; i++) {
+        if (this.posts[i].categories[0].slug !== "notice") {
           slidesArr.push(this.posts[i])
         }
       }

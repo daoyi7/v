@@ -65,7 +65,7 @@ export default {
     views: function(value) {
       return value.toString()
     }
-  },
+  }
 }
 </script>
 
