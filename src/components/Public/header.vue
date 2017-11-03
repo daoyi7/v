@@ -53,7 +53,7 @@ export default {
   methods: {
     menu() {
       if (this.$store.state.nav) {
-        this.$refs.header.style.left = '15em'
+        this.$refs.header.style.left = '19em'
         this.$emit('go')
       } else {
         this.$refs.header.style.left = '0em'

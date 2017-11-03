@@ -129,18 +129,20 @@ export default {
               font-size 1.4em
               color #00030d
           .info
-            height 4em
+            height 3em
             max-height 4em
             font-size 1.2em
             line-height 1.8em
             color #1d1d1d
           .list
             display flex
+            justify-content space-between
             line-height 1.4em
             padding-top .2em
             font-size 1.2em
             .list-icon
               flex 1
+              text-align center
               i
                 vertical-align middle
                 margin-right .2em
@@ -154,7 +156,7 @@ export default {
                 cursor pointer
               &.tag
                 i
-                  font-size .5em
+                  font-size 1em
                   font-weight 700
 
 </style>

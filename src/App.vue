@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     go() {
-      this.$refs.main.style.left = '15em'
+      this.$refs.main.style.left = '19em'
     },
     back() {
       this.$refs.main.style.left = '0em'

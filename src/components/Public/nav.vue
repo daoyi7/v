@@ -6,11 +6,11 @@
       <h3>" I Can do all things "</h3>
     </div>
   </div>
-  <div class="nav-wrap">
-    <div class="nav-item" v-for="(nav,index) in navs" key="index">
-      <router-link class="nav-link" :to="{ name: nav.slug, params: { id: nav.slug }}">
+  <div class="nav_wrap">
+    <div class="nav_item" v-for="(nav,index) in navs" key="index">
+      <router-link class="nav_link" :to="{ name: nav.slug, params: { id: nav.slug }}">
         <i :class="nav.description"></i>
-        <span class="nav-text">{{ nav.title }}</span>
+        <span class="nav_text">{{ nav.title }}</span>
       </router-link>
     </div>
   </div>
@@ -65,7 +65,7 @@ export default {
   methods: {
     toggle() {
       if (this.$store.state.nav) {
-        this.$refs.nav.style.left = '-15em'
+        this.$refs.nav.style.left = '-19em'
       }else {
         this.$refs.nav.style.left = '0em'
       }
@@ -81,20 +81,20 @@ export default {
       position fixed
       top 0
       // left 0
-      left -15em
+      left -19em
       z-index 10
-      width 15em
+      width 19em
       height 100%
       background-color #5d5d5d
-      transition left .15s linear
+      transition left .12s linear
       .me
         width 100%
         height 12em
         text-align center
         bg-image('background.jpg')
-        background-size 25em
+        background-size 30em
         background-repeat no-repeat
-        background-position -5em -2em
+        background-position -11em -4em
         .avatar
           width 8em
           height 8em
@@ -113,12 +113,14 @@ export default {
           line-height 2em
           color #fff
           font-weight 100
-      .nav-wrap
+      .nav_wrap
         width 100%
         height auto
-        .nav-item
+        padding 0 0 1em
+        border-1px(rgba(238, 238, 238, 0.38))
+        .nav_item
           line-height 3.3em
-          .nav-link
+          .nav_link
             font-size 1em
             color #fff
             display block
@@ -131,7 +133,7 @@ export default {
             .icon
               font-size 1.4em
               vertical-align middle
-            .nav-text
+            .nav_text
               font-size 1.4em
               margin-left 0.4em
               vertical-align middle
@@ -141,7 +143,7 @@ export default {
         width 100%
         height 2em
         line-height 2em
-        margin-top 1em
+        margin-top 1.5em
         .rico
           flex 1
           text-align center

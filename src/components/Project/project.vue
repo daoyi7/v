@@ -72,6 +72,9 @@ export default {
                 color #5b66a4
               &.icon-HTML
                 color #f16528
+              &.icon-repositories
+                font-size 6.8em
+                color #24292e
           .content
             padding .4em 1em 1.2em 1em
             .title
