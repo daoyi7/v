@@ -7,9 +7,9 @@
         {{ this.content }}
       </div>
       <div class="more">
-        <span class="published">This article published by {{ this.author }}</span>
-        <span class="update">{{ this.updatetime }}</span>
-        <span class="tag">{{ this.type }}</span>
+        <p class="published">This article published by {{ this.author }}</p>
+        <p class="update">{{ this.updatetime }}</p>
+        <p class="tag">{{ this.type }}</p>
       </div>
   </div>
 </template>
@@ -77,13 +77,9 @@ export default {
 <style lang="stylus" scoped>
 
   .detail
-    float left
-    position relative
     overflow hidden
-    width 61.4em
-    margin 0 0 8em 13em
-    background rgba(236, 238, 239, 0.7)
-    padding .4em 2.5em
+    width 100%
+    background #fff
     .title
       width 100%
       line-height 2.5em
@@ -92,8 +88,9 @@ export default {
       text-align center
       padding-bottom 1.6em
     .main
-      width 100%
+      width 95%
       height auto
+      margin 0 auto
       overflow hidden
       font-size 1.4em
       line-height 2em
@@ -104,8 +101,5 @@ export default {
       overflow hidden
       font-size 1.4em
       line-height 2.2em
-      span
-        margin-right .8em
-      span:last-child
-        margin-right 0
+      
 </style>

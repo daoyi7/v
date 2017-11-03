@@ -40,7 +40,7 @@ export default {
 @import "../../common/mixin";
 
     .slide-wrap
-      margin-bottom 1em
+      margin-bottom .5em
       .slide-item
         width 100%
         height 15em

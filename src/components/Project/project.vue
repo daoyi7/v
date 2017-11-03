@@ -44,78 +44,69 @@ export default {
     trans = .5s linear
 
     .project
-      float left
-      width 85.55em
-      margin 0 0 0 13em
-      position relative
+      width 100%
       overflow hidden
       display flex
       flex-wrap wrap
-      // background #ccc
       .item
-        margin 0 .88em .8em 0
-        background rgba(255, 255, 255, 0.7)
-        flex 0 0 20.5em
-        width 20.5em
-        transition background trans
-        &:hover
-          background rgba(255, 255, 255, 0.3)
+        width 50%
+        // flex 0 0 20.5em
+        // width 20.5em
+        a
+          display block
+          margin 0 .88em .8em 0
+          background rgb(255, 255, 255)
           .thumb
-            img
-              transform scale(1.5)
-        &:last-child
-          margin-right 0
-        .thumb
-          width 100%
-          height 11.5em
-          overflow hidden
-          text-align center
-          line-height 14.5em
-          i
-            font-size 10em
-            color rgb(154, 154, 154)
-            &.icon-Vue
-              color #42b983
-            &.icon-JavaScript
-              color #f9e031
-            &.icon-PHP
-              color #5b66a4
-            &.icon-HTML
-              color #f16528
-        .content
-          padding .4em 1em 1.2em 1em
-          .title
-            line-height 1.5em
-            text-align center
-            font-size 2em
-            color #00030d
-            font-weight 700
-            white-space nowrap
-            margin-bottom .4em
-          .description
-            margin-bottom 1rem
-            text-align left
-            color #00030d
-            line-height 2em
-            text-indent 1.6em
-            font-size 1.4em
-            height 4em
-            -o-text-overflow ellipsis
-            text-overflow ellipsis
-            display -webkit-box
+            width 100%
+            height 11.5em
             overflow hidden
-            -webkit-line-clamp 2
-            -webkit-box-orient vertical
-          .info
-            display flex
-            padding-top 1em
-            border-top 1px solid #b7bfc5
-            color #00030d
-            span
-              flex 1
+            text-align center
+            line-height 14.5em
+            i
+              font-size 8em
+              color rgb(154, 154, 154)
+              &.icon-Vue
+                color #42b983
+              &.icon-JavaScript
+                color #f9e031
+              &.icon-PHP
+                color #5b66a4
+              &.icon-HTML
+                color #f16528
+          .content
+            padding .4em 1em 1.2em 1em
+            .title
+              line-height 1.5em
               text-align center
-              font-size 1.4em
-              i
-                margin-right .5em
+              font-size 1.5em
+              color #00030d
+              font-weight 700
+              white-space nowrap
+              margin-bottom .4em
+            .description
+              margin-bottom 1rem
+              text-align left
+              color #00030d
+              line-height 2em
+              text-indent 1.6em
+              font-size 1.2em
+              height 4em
+              -o-text-overflow ellipsis
+              text-overflow ellipsis
+              display -webkit-box
+              overflow hidden
+              -webkit-line-clamp 2
+              -webkit-box-orient vertical
+            .info
+              display flex
+              padding-top 1em
+              border-top 1px solid #b7bfc5
+              color #00030d
+              span
+                flex 1
+                text-align center
+                font-size 1.4em
+                i
+                  margin-right .5em
 
 </style>

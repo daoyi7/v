@@ -37,7 +37,6 @@ export default {
       }
     },
     gohome() {
-      console.log(1)
       this.$router.push({
         path: '/'
       })

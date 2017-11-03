@@ -24,14 +24,14 @@
           <i class="icon iconfont icon-view"></i>
           <span>{{ blog.custom_fields.views | views }}</span>
         </p>
-        <p class="list-icon comments">
+        <!-- <p class="list-icon comments">
           <i class="icon iconfont icon-comments"></i>
           <span>{{ blog.comment_count }}</span>
         </p>
         <p class="list-icon like">
           <i class="icon iconfont icon-like"></i>
           <span>1</span>
-        </p>
+        </p> -->
         <p class="list-icon tag">
           <i class="icon iconfont icon-tag"></i>
           <span>{{ blog.categories[0].slug }}</span>
@@ -90,7 +90,7 @@ export default {
 
       function deleting() {
         let wstr = str.split(""),
-            j = wstr.length;
+          j = wstr.length;
 
         timer = setInterval(function() {
           j = j - 1
@@ -130,28 +130,24 @@ export default {
       opacity 0
 
   .blog
-    float left
-    width 66.4em
-    margin 0 0 0 13em
-    position relative
+    width 100%
     overflow hidden
     .head
       position relative
       width 100%
-      height 25em
-      // background rgba(236, 238, 239, 0.7)
+      height 15em
       background-color #fff
       overflow hidden
       display flex
       align-items center
-      margin-bottom 1em
+      margin 0 auto .5em
       .head-icon
         width 100%
         height auto
         display flex
         justify-content center
         i
-          font-size 15em
+          font-size 10em
       .slogan
         position absolute
         left 0
@@ -159,8 +155,8 @@ export default {
         width 100%
         height auto
         text-align center
-        font-size 1.7em
-        padding .4em 0 1em
+        font-size 1.5em
+        padding .4em 0
       .slogan::after
         content ""
         background-color #00030d
@@ -172,101 +168,79 @@ export default {
         animation blink .4s infinite alternate
         -webkit-animation blink .4s infinite alternate
     .module
-      position relative
-      width 100%
-      // background rgba(236, 238, 239, 0.7)
-      background-color #fff
-      padding .4em 0em
-      margin-bottom 1em
-      display flex
-      transition background trans
-      -moz-transition background trans
-      -webkit-transition background trans
-      -o-transition background trans
-      &:hover
-        background rgba(255, 255, 255, 0.7)
-        .thumb
-          a
-            img
-              transform translateX(-1em)
-      .thumb
-        flex 0 0 17em
-        width 17em
-        height 11em
-        margin-right 1em
-        padding-left 0.5em
-        a
           position relative
           width 100%
-          height 100%
-          display block
-          overflow hidden
-          img
-            position absolute
-            top -1em
-            left -.5em
-            min-width 100%
-            max-width calc(100% + 1.5em)
-            width calc(100% + 1.5em)
-            min-height 13em
-            height auto
-            transform translateX(0)
-            transition transform trans
-            -moz-transition transform trans
-            -webkit-transition transform trans
-            -o-transition transform trans
-      .main
-        flex 1
-        padding-right 1.6em
-        .title:hover
-          transform translateX(.7em)
-          a::before
-            width 100%
-        .title
-          line-height 2em
-          padding-bottom .5em
-          font-weight 700
-          transform translateX(0)
-          transition transform trans
-          -moz-transition transform trans
-          -webkit-transition transform trans
-          -o-transition transform trans
-          a
-            position relative
-            font-size 1.4em
-            color #00030d
-          a::before
-            content ""
-            position absolute
-            top 1.3em
-            width 0
-            height 1px
-            background #00030d
-            transition width trans
-            -moz-transition width trans
-            -webkit-transition width trans
-            -o-transition width trans
-        .info
-          height 5em
-          font-size 1.3em
-          line-height 1.8em
-          color #1d1d1d
-        .list
+          background #fff
+          padding .4em 0em
+          margin-bottom .5em
           display flex
-          line-height 1.4em
-          padding-top .2em
-          font-size 1.2em
-          .list-icon
+          transition background trans
+          .thumb
+            flex 0 0 13em
+            width 13em
+            height 8.4em
+            margin-right 1em
+            padding-left 0.5em
+            a
+              position relative
+              width 100%
+              height 100%
+              display block
+              overflow hidden
+              img
+                position absolute
+                top -3em
+                left -3.5em
+                min-width 100%
+                max-width calc(150% + 1.5em)
+                width calc(150% + 1.5em)
+                min-height 13em
+                height auto
+                transform translateX(0)
+                transition transform trans
+          .main
             flex 1
-            i
-              vertical-align middle
-              margin-right .2em
-              font-size 1.2em
-            span
-              vertical-align middle
-          .list-icon.like
-            cursor pointer
-          .list-icon.tag
-            i
+            padding-right 1em
+            .title
+              width 98%
+              line-height 2em
+              padding-bottom .5em
               font-weight 700
+              transform translateX(0)
+              transition transform trans
+              overflow hidden
+              text-overflow ellipsis
+              white-space nowrap
+              a
+                position relative
+                font-size 1.4em
+                color #00030d
+            .info
+              height 4em
+              max-height 4em
+              font-size 1.2em
+              line-height 1.8em
+              color #1d1d1d
+            .list
+              display flex
+              line-height 1.4em
+              padding-top .2em
+              font-size 1.2em
+              .list-icon
+                flex 1
+                i
+                  vertical-align middle
+                  margin-right .2em
+                  font-size 1.2em
+                span
+                  vertical-align middle
+                &.time
+                  flex 0 0 8.5em
+                  width 8.5em
+                &.like
+                  cursor pointer
+                &.tag
+                  i
+                    font-size .5em
+                    font-weight 700
 </style>
