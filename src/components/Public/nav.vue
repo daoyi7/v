@@ -65,9 +65,9 @@ export default {
   methods: {
     toggle() {
       if (this.$store.state.nav) {
-        this.$refs.nav.style.left = '0em'
-      }else {
         this.$refs.nav.style.left = '-15em'
+      }else {
+        this.$refs.nav.style.left = '0em'
       }
     }
   }

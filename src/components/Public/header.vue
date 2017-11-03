@@ -52,7 +52,6 @@ export default {
   },
   methods: {
     menu() {
-      this.$store.commit('toggle')
       if (this.$store.state.nav) {
         this.$refs.header.style.left = '15em'
         this.$emit('go')
@@ -60,6 +59,7 @@ export default {
         this.$refs.header.style.left = '0em'
         this.$emit('back')
       }
+      this.$store.commit('toggle')
     },
     gohome() {
       this.$router.push({
