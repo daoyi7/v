@@ -2,9 +2,9 @@
 <nav class="nav" ref="nav">
   <div class="me">
     <div class="avatar"></div>
-    <div class="motto">
-      <h3>" I Can do all things "</h3>
-    </div>
+  </div>
+  <div class="motto">
+    <h3>" I Can do all things "</h3>
   </div>
   <div class="nav_wrap">
     <div class="nav_item" v-for="(nav,index) in navs" key="index">
@@ -92,27 +92,30 @@ export default {
         height 12em
         text-align center
         bg-image('background.jpg')
-        background-size 30em
+        background-size 50em
         background-repeat no-repeat
-        background-position -11em -4em
+        background-position -15em -12em
         .avatar
-          width 8em
-          height 8em
+          width 7em
+          height 7em
+          border 2px solid #fff
           border-radius 50%
           overflow hidden
-          margin 1em 0 .8em
+          margin 3.5em 0 .8em
           display inline-block
           bg-image('avatar.jpg')
           background-size 11em
           background-repeat no-repeat
-          background-position -1.2em 0
-        .motto
-          width 100%
-          height 2em
-          text-align center
-          line-height 2em
-          color #fff
-          font-weight 100
+          background-position -1.7em 0
+      .motto
+        width 100%
+        height 3em
+        text-align center
+        line-height 3em
+        color #fff
+        font-weight 100
+        border-1px(rgba(238, 238, 238, 0.38))
+        margin-bottom 1em
       .nav_wrap
         width 100%
         height auto
