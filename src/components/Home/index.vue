@@ -15,7 +15,8 @@ export default {
   name: 'index',
   data() {
     return {
-      posts: []
+      posts: [],
+      pageTile: this.$route.name.substr(0, 1).toUpperCase() + this.$route.name.substr(1)
     }
   },
   components: {
@@ -47,6 +48,9 @@ export default {
       }
       return slidesArr.slice(0, 5)
     }
+  },
+  mounted() {
+    document.title = this.pageTile + ' | kawhi.me'
   }
 }
 </script>
