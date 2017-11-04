@@ -114,13 +114,15 @@ export default {
         line-height 3em
         color #fff
         font-weight 100
-        border-1px(rgba(238, 238, 238, 0.38))
+        // border-1px(rgba(238, 238, 238, 0.38))
+        border-1px(#565656)
         margin-bottom 1em
       .nav_wrap
         width 100%
         height auto
         padding 0 0 1em
-        border-1px(rgba(238, 238, 238, 0.38))
+        // border-1px(rgba(238, 238, 238, 0.38))
+        border-1px(#565656)
         .nav_item
           line-height 3.3em
           .nav_link
