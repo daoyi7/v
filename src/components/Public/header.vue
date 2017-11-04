@@ -2,19 +2,12 @@
 <header class="header" v-click-outside="searchHide">
   <div class="header_wrap" ref="header">
     <div class="header_nav">
-      <span class="menu" @click.stop="menu"><i class="icon iconfont icon-menu"></i></span>
+      <span class="menu" @click.stop="menu"><i class="icon iconfont" :class="[isDetail ? 'icon-back' : 'icon-menu']"></i></span>
       <transition name="fade">
         <span class="title" ref="title" @click.stop="gohome" v-if="titleShow">kawhi.me</span>
-        <input ref="input"
-          class="input"
-          type="text"
-          v-model="searchText"
-          placeholder="Search your want..."
-          v-if="!titleShow"
-          @keyup.enter="search"
-          v-focus>
+        <input ref="input" class="input" type="text" v-model="searchText" placeholder="Search your want..." v-if="!titleShow" @keyup.enter="search" v-focus>
       </transition>
-      <span class="search" @click.stop="searchShow"><i class="icon iconfont icon-search"></i></span>
+      <span class="search" @click.stop="searchShow" v-if='this.isBack'><i class="icon iconfont icon-search"></i></span>
     </div>
   </div>
 </header>
@@ -30,14 +23,14 @@ Vue.use(vClickOutside)
 Vue.directive('focus', {
   // 当绑定元素插入到 DOM 中。
 
-  inserted: function (el) {
-      // 聚焦元素
-      el.focus()
+  inserted: function(el) {
+    // 聚焦元素
+    el.focus()
   },
   //也可以用update,update就是当页面有操作的时候就触发，比如点击按钮，输入框输入都算。
   //有一个要注意的就是，就是你页面有几个input,比如一个input绑定了v-focus,一个没有绑定。你在没绑定v-focus的input输入时，绑定了v-focus的input就是自动获取焦点，这是个bug.
   //update: function (el) {
-      //el.focus()
+  //el.focus()
   //}
 });
 
@@ -47,19 +40,24 @@ export default {
     return {
       searchText: '',
       hots: [],
-      titleShow: true
+      titleShow: true,
+      isBack: true
     }
   },
   methods: {
     menu() {
-      if (this.$store.state.nav) {
-        this.$refs.header.style.left = '19em'
-        this.$emit('go')
+      if (this.isBack) {
+        if (this.$store.state.nav) {
+          this.$refs.header.style.left = '19em'
+          this.$emit('go')
+        } else {
+          this.$refs.header.style.left = '0em'
+          this.$emit('back')
+        }
+        this.$store.commit('toggle')
       } else {
-        this.$refs.header.style.left = '0em'
-        this.$emit('back')
+        this.$router.go(-1)
       }
-      this.$store.commit('toggle')
     },
     gohome() {
       this.$router.push({
@@ -78,9 +76,17 @@ export default {
           path: '/search/' + this.searchText
         })
       }
-    },
-    aa() {
-      console.log(1)
+    }
+  },
+  computed: {
+    isDetail() {
+      if (this.$route.name == 'detail') {
+        this.isBack = false
+        return true
+      } else {
+        this.isBack = true
+        return false
+      }
     }
   }
 }
@@ -121,7 +127,7 @@ export default {
             line-height 3em
             text-align center
             display inline-block
-            i.icon-menu
+            i
               font-size 2em
           .fade-enter-active, .fade-leave-active
             transition all .5s
