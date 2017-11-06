@@ -79,15 +79,7 @@ export default {
         this.getData(this.id)
       }
     }
-  },
-  filters: {
-    info: function(value) {
-      const reg = /<p>(.*?)<\/p>/g
-      const result = value.match(reg)
-
-      return RegExp.$1
-    }
-  },
+  }
 }
 </script>
 

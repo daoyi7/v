@@ -82,7 +82,7 @@ export default {
     isDetail() {
       if (this.$route.name == 'detail') {
         this.isBack = false
-        return true
+        return
       } else {
         this.isBack = true
         return false
