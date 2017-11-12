@@ -204,7 +204,7 @@ export default {
             flex 1
             padding-right 1em
             .title
-              width 98%
+              width 90%
               line-height 2em
               padding-bottom .5em
               font-weight 700
